@@ -1,6 +1,7 @@
 package com.rison.office.chapter05;
 
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
@@ -27,8 +28,8 @@ public class MainTest {
         TreeNode root = new TreeNode(pre[0]);
         for (int i = 0; i < pre.length; i++) {
             if (pre[0] == in[i]) {
-                root.left = reConstructBinaryTree(Arrays.copyOfRange(pre, 1, i + 1), Arrays.copyOfRange(in, 1, i + 1));
-                root.right = reConstructBinaryTree(Arrays.copyOfRange(pre, 1 + 1, pre.length), Arrays.copyOfRange(in, i + 1, in.length));
+                root.left = reConstructBinaryTree(Arrays.copyOfRange(pre, 1, i + 1), Arrays.copyOfRange(in, 0, i));
+                root.right = reConstructBinaryTree(Arrays.copyOfRange(pre, i + 1, pre.length), Arrays.copyOfRange(in, i + 1, in.length));
             }
         }
         return root;
