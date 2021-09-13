@@ -18,8 +18,10 @@ public class MainTest {
         }
         if (exponent > 0) {
             res = mutiply(base, exponent);
+            return res;
         } else {
             res = mutiply(1 / base, -exponent);
+            return res;
         }
     }
 
